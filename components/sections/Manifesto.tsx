@@ -4,6 +4,7 @@ import { Eyebrow } from "@/components/primitives/Eyebrow";
 export function Manifesto() {
   return (
     <section
+      id="manifesto"
       className="section-pad"
       style={{ background: "var(--bone)" }}
       aria-labelledby="manifesto-heading"

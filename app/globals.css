@@ -111,10 +111,58 @@ a {
   font-family: var(--font-fraunces), ui-serif, Georgia, serif;
   font-weight: 600;
   font-optical-sizing: auto;
-  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
-  line-height: 1;
+  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   text-wrap: balance;
+  max-width: 16ch;
+}
+
+.hero-headline > span {
+  display: block;
+}
+.hero-headline > span + span {
+  margin-top: 0.18em;
+}
+
+.hero-rule {
+  width: 64px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  margin-bottom: 24px;
+}
+
+.hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.hero-scroll::after {
+  content: "";
+  width: 1px;
+  height: 28px;
+  background: currentColor;
+  display: inline-block;
+  animation: hero-scroll-line 2.4s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes hero-scroll-line {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+  50%      { transform: scaleY(1);   opacity: 0.85; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll::after {
+    animation: none;
+    transform: scaleY(1);
+    opacity: 0.6;
+  }
 }
 
 .display-h2 {
